@@ -1,0 +1,26 @@
+<div class="container">
+  
+  <p><%= @post.title %></p>
+  <p><%= @post.body %></p>
+
+  <form method="POST" action='/comment/submit'>
+    <textarea name="body" placeholder="Text" rows="4" cols="50"></textarea>
+    <input type="hidden" value="<%= session[:user].id %>" name="user_id">
+    <input type="hidden" value="<%= @post.id %>" name="post_id">
+    <input type="submit" value="Add Comment">
+  </form>
+
+  <hr>
+
+   <div class="show_comments">
+
+    <% show_comments.each do |comment|%>
+      <a href='/comment/<%= comment.id %>'><%= comment.body %></a>
+      <br>
+    <% end %>
+
+ </div>
+
+
+</div>
+

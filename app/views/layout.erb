@@ -18,6 +18,24 @@
   <title></title>
 </head>
 <body>
+
+  <nav>
+  <% if !session[:logged_in] %>
+      <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/post/submit'>Submit</a></li>
+        <li><a href='/login'>Login</a></li>
+      </ul>
+  <% else %>
+      <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/post/submit'>Submit</a></li>
+        <li><p><%= session[:user].username %></p></li>
+        <li><a href='/login'>Logout</a></li>
+      </ul>
+  <% end %>
+  </nav>
+
   <%= yield %>
 </body>
 </html>

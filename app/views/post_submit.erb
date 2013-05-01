@@ -1,0 +1,11 @@
+<div class="container">
+
+  <form method="POST" action='/post/submit'>
+    <input type="text" placeholder="Title" name="title">
+    <input type="text" placeholder="URL" name="url">
+    <textarea name="body" placeholder="Text" rows="4" cols="46"></textarea>
+    <input type="hidden" value="<%= session[:user].id %>" name="user_id">
+    <input type="submit" value="Submit">
+  </form>
+
+</div>

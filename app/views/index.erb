@@ -1,23 +1,18 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  
+  <div class="nav">
+    <a href='/login'>Login</a>
+    <a href='/logout'>Logout</a>
+    <a href='/post/submit'>Submit</a>
+ </div>
+ 
+ <div class="show_posts">
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+    <% show_posts.each do |post|%>
+      <a href='/post/<%= post.id %>'><%= post.title %></a>
+      <br>
+    <% end %>
+
+ </div>
+
 </div>
