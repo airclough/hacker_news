@@ -18,24 +18,37 @@
   <title></title>
 </head>
 <body>
+  <header>
+    <%= partial :_header %>
+  </header>
+  <% unless session[:user_id] %>
+    <div class='float-div'>
+      <form class='login-form'>
+        <input class='login-form-username' type="text" placeholder="Username" name="username">
+        <input class='login-form-password' type="password" placeholder="Password" name="password">
+        <input class='login-form-submit' type="submit" value="Login">
+      </form>
 
-  <nav>
-  <% if !session[:logged_in] %>
-      <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/post/submit'>Submit</a></li>
-        <li><a href='/login'>Login</a></li>
-      </ul>
-  <% else %>
-      <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/post/submit'>Submit</a></li>
-        <li><p><%= session[:user].username %></p></li>
-        <li><a href='/login'>Logout</a></li>
-      </ul>
+      <form class='register-form'>
+        <input class='register-form-username' type="text" placeholder="Username" name="username">
+        <input class='register-form-email' type="email" placeholder="Email" name="email">
+        <input class='register-form-password' type="password" placeholder="Password" name="password">
+        <input class='register-form-submit' type="submit" value="Register">
+      </form>
+    </div>
   <% end %>
-  </nav>
 
+
+  <div class="new-post">
+    <form class="new-post-form">
+      <input class="form-title" type="text" placeholder="Title" name="title" >
+      <textarea class="form-body" rows="10" placeholder="Your post..." name="body" ></textarea>
+      <button class="form-submit" type="submit">POST</button>
+    </form>
+  </div>
+  <div class='post-result'></div>
+  <div class='container'>
   <%= yield %>
+  </div>
 </body>
 </html>

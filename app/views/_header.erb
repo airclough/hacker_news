@@ -1,0 +1,17 @@
+<div class="nav">
+  <div id="title">
+    <a href="/"><h1>HN Clone</h1></a>
+  </div>
+  <nav>
+    
+    <ul class="navlist">
+      <% if session[:user_id] %>
+        <li><span class="new-post-button">Post</span></li>
+        <li><a href="/logout">Logout</a></li>
+      <% else %>
+        <li><span class="login-button">Login</span></li>
+        <li><span class="register-button">Register</span></li>
+      <% end %>
+    </ul>
+  </nav>
+</div>

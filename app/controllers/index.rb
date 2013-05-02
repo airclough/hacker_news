@@ -1,5 +1,4 @@
 get '/' do
-  # @user = User.find(session[:user_id])
-  # p @user  
+  @posts = Post.order('created_at DESC').where('post_id is null')
   erb :index
 end

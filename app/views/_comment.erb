@@ -1,0 +1,26 @@
+<article>
+  <span id="<%= comment.id %>"></span>
+<div class="comment-header">
+  <h4><a href="/user/<%= comment.user.id %>"><%= comment.user.username %></a> <small><%= date(comment.created_at) %></small></h4>
+</div>
+
+<div class="comment-body">
+  <p><%= comment_body(comment) %></p>
+</div>
+
+<% if session[:user_id] %>
+<div class="make-comment">
+  <input id="post-id" type="hidden" value="<%= comment.id %>">
+  <span class="reply-button">Reply</span>
+</div>
+<% end %>
+</article>
+
+
+<div class="comment-comments">
+  <ul>
+    <% comment.comments.each do |comment| %>
+      <li><%= partial :_comment, :comment => comment %></li>
+    <% end %>
+  </ul>
+</div>

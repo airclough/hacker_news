@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   include BCrypt
-
-  validates :username, :confirmation => true
+  has_many :posts
+  validates :username, :confirmation => true, :uniqueness => true
   # validates :username_confirmation, :presence => true
   validates :password_hash, :presence => true
 

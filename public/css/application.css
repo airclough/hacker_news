@@ -1,9 +1,286 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+}
+
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  margin: 50px auto 0;
+  width: 720px;
+  clear: both;
 }
 th {
   text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color:#4671d5;
+}
+
+/* header */
+header span  {
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+nav {
+  margin-right: 20px;
+}
+.nav {
+  background-color: #444;
+  background-image: linear-gradient(to bottom, #eee, #777);
+  height: 40px;  
+}
+
+#title {
+  float: left;
+  margin-left: 20px;
+}
+#title a{
+  text-decoration: none
+}
+#title h1 {
+
+  margin: 0;
+  padding: 0;
+  color: #4671d5;
+  text-shadow: 1px 1px #555;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.navlist{
+  position: relative;
+  float: right;
+  margin: 0;
+  padding: 0;
+  line-height: 40px;
+
+}
+.navlist li {
+  display: inline;
+}
+.navlist a{
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main{
+  padding: 0px 20px 20px 20px;
+}
+
+
+/* Index */
+.post a{
+}
+.index-post-title a{
+  color: #444;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.index-post-title{
+
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+.index-post-info a{
+  color: #4671D5;
+}
+
+.post small{
+  color: #777;
+}
+.index-post-info{
+  font-size: 0.9em;
+}
+
+
+/* Post format */
+.post-title{
+  padding-bottom: 5px;
+  font-size: 1.5em;
+}
+.post-info{
+  padding-bottom: 15px;
+}
+
+/* Profile Styling */ 
+.user-info{
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #f7f7f7
+}
+
+.column-wrapper{
+  width: inherit;
+}
+
+.column-wrapper ul {
+  padding: 0;
+  list-style: none;
+}
+.column-wrapper li{
+  padding-bottom: 5px;
+}
+.column-wrapper a{
+  text-decoration: none;
+  color: blue;
+}
+
+.post-column{
+  width: 50%;
+  float: left;
+}
+
+.comment-column{
+  width: 50%;
+  float: left;
+}
+
+.truncate {
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-email {
+  color: #777;
+}
+
+/* new post */
+.new-post{
+  margin:0 auto;
+  width: 400px;
+  clear: both;
+  background-color: #777;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 10px 0 10px 0;
+  display: none;
+}
+
+.new-post-form{
+  margin: 0 auto;
+}
+
+.form-title{
+  margin: 0 auto;
+  display: block;
+  width: 300px;
+  font-size: 20px;
+}
+
+.form-body{
+  margin: 10px auto;
+  display: block;
+  width: 300px;
+  font-size: 20px;
+}
+.form-submit {
+  display: block;
+  margin-left: 293px; 
+  font-weight: bold;
+  background-color: #4671d5;
+  border: 1px solid #777;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+
+/* Form Result */
+.post-result{
+  margin:0 auto;
+  width: 400px;
+  clear: both;
+  background-color: #777;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 10px 0 10px 0;
+  display: none;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.success {
+  background: #4671d5;
+  padding: 3px;
+  border-radius: 4px;
+  margin-right: 2px;
+}
+
+.post-result a{
+  color: #4671D5;
+}
+
+
+/* login form */
+.float-div {
+  position: absolute;
+  left: 100%;
+  top: 40px;
+  /*float: right;*/
+  /*width: 200px;*/
+  background-color: #777;
+  padding: 10px  0;
+  margin-right: 200px;
+  border-bottom-left-radius: 4px;
+}
+
+.login-form{
+  display: none;
+}
+.login-form-username, .register-form-username{
+  margin: 0 25px 0 25px;
+  width: 150px;
+}
+.login-form-password, .register-form-password{
+  margin: 5px 25px 5px 25px;
+  width: 150px;
+}
+
+.register-form-email{
+  margin: 5px 25px 0 25px;
+  width: 150px; 
+}
+.login-form-submit, .register-form-submit{
+  margin: 0 25px 0 25px;
+}
+
+/* register */
+
+.register-form{
+  display: none;
+}
+.register-form-username{
+  margin: 0 25px 0 25px;
+  width: 150px;
+}
+.register-form-password{
+  margin: 5px 25px 5px 25px;
+  width: 150px;
+}
+.register-form-submit{
+  margin: 0 25px 0 25px;
+}
+
+/* Comment Stuff */
+.comment-body {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.comment-form {
+  display: none;
 }

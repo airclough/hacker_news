@@ -1,0 +1,24 @@
+<div class="user-info">
+  <h2><%= @user.username %></h2>
+  <span class="user-email"><%= @user.email %></span>
+</div>
+
+<div class="column-wrapper">
+  <div class="post-column">
+    <h4>Posts</h4>
+    <ul>
+      <% @posts.each do |post| %>
+        <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div class="comment-column">
+    <h4>Comments</h4>
+    <ul>
+      <% @comments.each do |comment| %>
+        <li class="truncate"><a href="/post/<%= comment.post_id %>"><%= comment.body %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

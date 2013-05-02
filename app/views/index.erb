@@ -1,18 +1,7 @@
-<div class="container">
-  
-  <div class="nav">
-    <a href='/login'>Login</a>
-    <a href='/logout'>Logout</a>
-    <a href='/post/submit'>Submit</a>
- </div>
- 
- <div class="show_posts">
-
-    <% show_posts.each do |post|%>
-      <a href='/post/<%= post.id %>'><%= post.title %></a>
-      <br>
-    <% end %>
-
- </div>
-
-</div>
+  <% @posts.each do |post|%>
+    <div class="post">
+      <span class="index-post-title"><a href='/post/<%= post.id %>'><%= post.title %></a></span>
+      <span class="index-post-info"><a href="/user/<%= post.user_id %>"><%= post.user.username %></a>
+      <small>(<%= date(post.created_at) %>)</small></span>
+    </div>
+  <% end %>
